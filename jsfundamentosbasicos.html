@@ -41,6 +41,17 @@
             return totalSuma
         }
         console.log(sumaImpares())
+
+        /*Ejercicio 4 Itera un array: Escribe una función que devuelva la suma de todos los valores dentro de un array (ej:  [1,2,5] retorna 8. [-5,2,5,12] retorna 14). */
+
+        function sumaArray(array) {
+            var suma = 0
+            for (var i = 0; i < array.length; i++) {
+                suma = suma + array[i]
+            }
+            return suma;
+        }
+        console.log(sumaArray([1, 5, 4, 7]))
     </script>
 </head>
 
