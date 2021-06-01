@@ -7,6 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fundamentos Básicos</title>
     <script>
+        /* Ejercicio 1 Obtén del 1 al 255: Escribe una función que devuelve un array con todos los números del 1 al 255.*/
+        function ejercicioUno() {
+            let array = [];
+            for (let i = 1; i < 256; i++) {
+                array.push(i);
+            }
+            return array;
+        }
+        console.log(ejercicioUno());
+
+        /*Ejercicio 2 Consigue pares hasta 1000: Escribe una función que entregue la suma de todos los números pares del 1 al 1000 - Puedes usar un operador de módulo para este ejercicio. */
+
+        function sumaPares() {
+            var totalSuma = 0;
+            for (var i = 0; i <= 1000; i++) {
+                if (i % 2 == 0) {
+                    totalSuma = totalSuma + i
+                }
+            }
+            return totalSuma
+        }
+        console.log(sumaPares())
+
+        /*Ejercicio 3
     </script>
 </head>
 
