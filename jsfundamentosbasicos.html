@@ -109,6 +109,24 @@
             return multiple
         }
         console.log(cuadrado([1, 4, 7, 8, 9, -6]))
+
+        /*Ejercicio 10 Negativos: Dado un array con múltiples valores, escribe una función que reemplace cualquier número negativo dentro del array por 0. Cuando el programa esté listo, el array no debiera contener números negativos (ej: [1,5,10,-2] se convertirá en [1,5,10,0]).*/
+
+        function multiple(array) {
+            var reemplazo = []
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] < 0) {
+                    reemplazo.push(0)
+                } else {
+                    reemplazo.push(array[i])
+                }
+            }
+            return reemplazo
+        }
+
+        console.log(multiple([3, 5, -2, 7, 8, -1]))
+
+        /*Ejercicio 11
     </script>
 </head>
 
