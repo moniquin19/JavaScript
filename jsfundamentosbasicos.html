@@ -126,7 +126,18 @@
 
         console.log(multiple([3, 5, -2, 7, 8, -1]))
 
-        /*Ejercicio 11
+        /*Ejercicio 11 Max/Min/Avg: Dado un array con múltiples valores, escribe una función que devuelva un nuevo array que solo contenga el valor mayor (max), menor (min) y promedio (avg) del array original (ej: [1,5,10,-2] devolverá [10,-2,3.5]).*/
+
+        function maxMinavg(array) {
+            var newArray = [];
+            var ordenado = array.sort();
+            var avg = proMedio(ordenado);
+            newArray.push(ordenado[ordenado.length - 1]);
+            newArray.push(ordenado[0]);
+            newArray.push(avg);
+            return newArray
+        }
+        console.log(maxMinavg([23, 5, 67, 8, 0]))
     </script>
 </head>
 
