@@ -138,6 +138,15 @@
             return newArray
         }
         console.log(maxMinavg([23, 5, 67, 8, 0]))
+
+        /*Ejercicio 12 Intercambia Valores: Escribe una función que intercambie el primer y el último valor de cualquier array. La extensión mínima predeterminada del array es 2 (ej: [1,5,10,-2] será [-2,5,10,1]).*/
+        function interCambio(array) {
+            var valor = array[0];
+            array[0] = array[array.length - 1];
+            array[array.length - 1] = valor;
+            return array
+        }
+        console.log(interCambio([23, 5, 67, 8, 0]))
     </script>
 </head>
 
