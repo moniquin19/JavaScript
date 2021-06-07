@@ -22,6 +22,28 @@
         console.log(cambio([3, 5, -2, 7, 8, -1]))
 
         /*Ejercicio 2 Imprime (print) el menor, devuelve (return) el mayor - Crea una función que tome un array de números. La función debería imprimir (print) el menor valor del array, y devolver (return) el mayor.*/
+        function print(array) {
+            var ordenado = array.sort();
+            console.log(ordenado[0])
+            return ordenado[ordenado.length - 1]
+        }
+        console.log(print([3, 5, -2, 7, 8, -1]))
+
+        /*Ejercicio 3 imprime (print) uno, devuelve (return) otro- Crea una función para un array de números. La función debería imprimir (print) el penúltimo valor y devolver (return) el primer valor impar.*/
+        function unoYotro(array) {
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] % 2 != 0) {
+                    var impar = array[i];
+                    break
+                }
+
+            }
+            console.log(array[array.length - 2])
+            return impar
+        }
+        console.log(unoYotro([3, 5, -2, 7, 8, -1]))
+
+
         /*Ejercicio 4 Doble Visión - Dado un array, crea una función que devuelva un nuevo array donde cada valor se duplique. Entonces, doble([1,2,3]) debiera devolver [2, 4, 6] sin cambiar el array original. */
         function nEw(array) {
             var duplicado = []
@@ -45,6 +67,69 @@
             return array
         }
         console.log(reemPlazar([3, 5, -2, 7, 8, -1]))
+
+        /*Ejercicio 6 Pares e Impares - Crea una función que acepte un array. Cada vez que ese array tenga 3 valores impares seguidos, imprime (print) “¡Qué imparcial!”, y cada vez que tenga 3 pares seguidos, imprime (print) “¡Es para bien!”*/
+        function parImpar(array) {
+            var par = 0;
+            var impar = 0;
+
+            for (let i = 0; i < array.length; i++) {
+                const element = array[i];
+                if (element % 2 == 0) {
+                    par += 1;
+                    impar = 0;
+                    if (par == 3) {
+                        console.log("¡Es para bien!");
+                        break;
+                    }
+                } else {
+                    impar += 1;
+                    par = 0;
+                    if (impar == 3) {
+                        console.log("¡Qué imparcial!");
+                        break;
+                    }
+                }
+            }
+        }
+        parImpar([2, 4, 8, 11, 13]);
+
+        /*Ejercicio 7 Incrementa los Segundos - Dado un array de números llamado arr, suma 1 a los elementos, específicamente a aquellos cuyo índice es impar (arr[1], arr[3], arr[5], etc). Luego, imprime (console.log) cada valor del array y devuelve el arreglo arr.*/
+
+        function inCremenTo(arr) {
+            var saved = arr;
+            for (var i = 0; i < arr.length; i++) {
+                if (i % 2 != 0) {
+                    arr[i] = arr[i] + 1;
+                }
+                console.log(arr[i])
+            }
+            return saved
+        }
+        console.log(inCremenTo([1, 4, 7, 0, 3]))
+
+        /* Ejercicio 8 Longitudes previas - Pasado un array (similar a decir ‘tomado un array’ o ‘dado un array’) que contiene strings, reemplaza cada string con un número de acuerdo cantidad de letras (longitud) del string anterior. Por ejemplo, longitudesPrevias([“programar”,“dojo”, “genial”]) debería devolver [“programar”,9, 4]. Pista: ¿For loops solo puede ir hacia adelante?*/
+
+        function lonGitudPrevias(array) {
+            var numero = [];
+            numero.push(array[0]);
+            for (var i = 0; i < array.length - 2; i++) {
+                numero.push(array[i].length);
+
+            }
+            return numero
+        }
+        console.log(lonGitudPrevias(["hola", "hello", "bonjour", "ciao", "konnichi wa"]))
+
+        /*Ejercicio 9 Agrega Siete - Construye una función que acepte un array. Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno. No alteres el array original. Por ejemplo, agregaSiete([1,2,3) debería devolver [8,9,10] en un nuevo array. */
+        function agrEgaSiete(array) {
+            var suma = []
+            for (var i = 0; i < array.length; i++) {
+                suma.push(array[i] + 7)
+            }
+            return suma
+        }
+        console.log(agrEgaSiete([1, 4, 7, 0, 3]))
     </script>
 </head>
 
