@@ -130,6 +130,37 @@
             return suma
         }
         console.log(agrEgaSiete([1, 4, 7, 0, 3]))
+
+        /*Ejercicio 10 Array Inverso - Dado un array, escribe una función que invierte sus valores en el lugar. Ejemplo: invertir([3,1,6,4,2)) devuelve el mismo array pero con sus valores al revés, es decir [2,4,6,1,3]. Haz esto sin crear un array temporal vacío. (Pista: necesitarás intercambiar (swap) valores).*/
+        function inVertir(array) {
+            var reverso = 1;
+            var largo = array.length;
+            var mitad = largo / 2;
+            var temp = 0;
+            for (var i = 0; i < mitad; i++) {
+                temp = array[largo - reverso];
+                array[largo - reverso] = array[i];
+                array[i] = temp;
+                reverso = reverso + 1;
+            }
+            return array
+        }
+        console.log(inVertir([1, 2, 3, 4, 5, 6, 7, 8]))
+
+        /*Ejercicio 11 Perspectiva: Negativa - Dado un array crear y devuelve uno nuevo que contenga todos los valores del array original, pero negativos (no simplemente multiplicando por -1). Dado [1,-3,5], devuelve [-1,-3,-5].*/
+        function persPecTiVa(array) {
+            for (var i = 0; i < array.length; i++) {
+                if (array[i] > 0) {
+                    array[i] = array[i] * -1;
+                }
+            }
+            return array;
+        }
+
+        console.log(persPecTiVa([2, 4, -7, 20]))
+
+
+        /*Ejercicio 12 Siempre hambriento - Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez.
     </script>
 </head>
 
