@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Jquery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            //funcionalidad con etiqueta
+            $('button').click(function() {
+                console.log("Estoy en Jquery desde Button");
+                alert("Estoy en Jquery desde Button");
+            });
+
+            //generico para todas la etiquetas del tipo.
+            $('input').click(function() {
+                console.log("Estoy en Jquery desde input");
+                alert("Estoy en Jquery desde input");
+            });
+            //funcionalidad por clase(.)
+            //se ejecuta para cualquier elemento que posea la clase.
+
+            $('.input2').click(function() {
+                console.log("Estoy en Jquery desde input por clase");
+                alert("Estoy en Jquery desde input por clase");
+            });
+
+            //funcionalidad por id(#)
+            //solo para el elemento con el id
+            $('#input3').click(function() {
+                console.log("Estoy en Jquery desde input por id");
+                alert("Estoy en Jquery desde input por id");
+            });
+
+            /*ejercicio de Jquery*/
+
+            $('#input4').click(function() {
+                console.log($('#parrafo').text());
+                $('#parrafo').text("Texto modificado por medio del id");
+            });
+
+            /*fin Jquery*/
+        });
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <button>Jquery</button>
+        <input type="button" value="botón 1">
+        <input type="button" value="botón 2" class="input2">
+        <input type="button" value="botón 3" id="input3">
+        <input type="button" value="cambiar parrafo" id="input4">
+
+        <p id="parrafo">Hola,Incluso para agendar en caso de que deba escanear documentos, o anillar impresiones que usted ya posee.</p>
+    </div>
+</body>
+
+</html>
