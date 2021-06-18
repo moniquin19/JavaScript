@@ -10,6 +10,7 @@
     <script>
         $('document').ready(function() {
             //$('').accion(function(){});
+            //click
             $('#boton1').click(function() {
                 console.log("Función click");
                 alert("Función click");
@@ -56,7 +57,58 @@
                 $('#parrafo3').addClass("subrayado");
             });
 
+            //append
+            $('#parrafo5').click(function() {
+                $('#parrafo5').append('<br> esto es texto adicional <a href=#>link dinamico</a>');
+            });
 
+            //HTML: sobre escribe lo interno al elemento
+            $('#parrafo6').click(function() {
+                $('#parrafo6').html('<img src=sm.png>');
+                $('img').attr('width', '200');
+                $('img').attr('alt', 'sm');
+            });
+            //ATTR
+            $('#boton14').click(function() {
+                var respuesta = $('#boton14').attr('value');
+                var wimagen = $('img').attr('width');
+                alert(respuesta + ' ' + wimagen);
+                //alert(wimagen);
+                alert($('#boton14').val());
+            });
+
+            //val
+            $('#boton15').click(function() {
+                //.val() retorna un string, con el contenido del input
+                var valText1 = $('#text1').val();
+                var valText2 = $('#text2').val();
+                //parseInt()= numero entero /  o parseFloat() numero con decimales /  o Number()
+                //isNaN(valText1); // validar si es numero
+
+                if (isNaN(valText1) || isNaN(valText2)) {
+                    //alert("No es un numero");
+                    $('#boton15').after('<p id=alerta>No es un número </p>');
+                    $('#alerta').addClass('alertaMsg');
+                    $('#text1').addClass('alertaMsg');
+                    $('#text2').addClass('fondo');
+                } else {
+                    if (Number(valText2) == 0) {
+                        $('#boton15').after('<p id=alerta>No se puede dividir por cero </p>');
+                        $('#alerta').addClass('alertaMsg');
+                    } else {
+                        alert(parseFloat(valText1) / Number(valText2));
+                    }
+                }
+            });
+
+            //before
+            $('#parrafo7').click(function() {
+                $('#parrafo7').before('<p>Hello People</p>');
+            });
+            //after
+            $('#parrafo8').click(function() {
+                $('#parrafo8').after('<p>Hello People</p>');
+            })
 
 
 
@@ -65,6 +117,18 @@
         });
     </script>
     <style>
+        .alertaMsg {
+            color: red;
+        }
+        
+        .colores {
+            color: brown;
+        }
+        
+        .fondo {
+            background-color: red;
+        }
+        
         .subrayado {
             background-color: crimson;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -102,12 +166,32 @@
         <button id="boton10">Funcion addClass</button>
         <hr>
 
-        <h1>FUNCIÓN removeClass- </h1>
+        <!-- <h1>FUNCIÓN removeClass- </h1>
         <p id="parrafo4">Clickea el botón para ejecutar el evento varios</p>
         <button id="boton11">Funcion slidefadeOut</button>
         <button id="boton12">Funcion slidefadeIn</button>
         <button id="boton13">Funcion addClass</button>
+        <hr> -->
+        <h1>APPEND y HTML</h1>
+        <p id="parrafo5">esto es el parrafo 5 </p>
+        <p id="parrafo6"><br> soy elparrafo 6 <a href=#>link dinamico</a> </p>
         <hr>
+        <h1>ATTR</h1>
+        <input id="boton14" type="button" value="opcion1">
+        <hr>
+        <h1>VAL</h1>
+        <input type="text" name="text1" id="text1">
+        <br>
+        <input type="text" name="text2" id="text2">
+        <button id="boton15">valores de los input</button>
+        <hr>
+        <h1>BEFORE</h1>
+        <p id="parrafo7">Clickea el texto para ejecutar Before</p>
+        <hr>
+        <h1>AFTER</h1>
+        <p id="parrafo8">Clickea el texto para ejecutar After</p>
+        <hr>
+
 
 
     </div>
